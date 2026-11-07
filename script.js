@@ -28,6 +28,8 @@ const products = [
 
 const productList = document.getElementById("product-list");
 
+const whatsappNumber = "6285719046064";
+
 function formatPrice(price) {
   return new Intl.NumberFormat("id-ID", {
     style: "currency",
@@ -37,61 +39,44 @@ function formatPrice(price) {
 }
 
 function renderProducts() {
-  productList.innerHTML = products.map(product => `
-    <article class="product-card">
-      <div class="product-image">
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-          loading="lazy"
-        >
-      </div>
+  productList.innerHTML = products.map(product => {
+    const message =
+      `Halo, saya ingin membeli ${product.name} dengan harga ${formatPrice(product.price)}. Apakah masih tersedia?`;
 
-      <div class="product-info">
-        <p>${product.category}</p>
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <div class="product-price">
-          ${formatPrice(product.price)}
+    const whatsappLink =
+      `https://wa.me/${WhatsappNumber?text=${encodeURIComponent(message)}`;
+
+    return `
+      <article class="product-card">
+        <div class="product-image">
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            loading="lazy"
+          >
         </div>
-        <button
-          class="detail-button"
-          onclick="showProduct(${product.id})"
-        >
-          Lihat Produk →
-        </button>
-      </div>
-    </article>
-  `).join("");
+
+        <div class="product-info">
+          <p>${product.category}</p>
+          <h3>${product.name}</h3>
+          <p>${product.description}</p>
+
+          <div class="product-price">
+            ${formatPrice(product.price)}
+          </div>
+
+          <a
+            href="${whatsappLink}"
+            class="buy-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Beli Sekarang →
+          </a>
+        </div>
+      </article>
+    `;
+  }).join("");
 }
 
-
-function showProduct(id) {
-  const product = products.find(item => item.id === id);
-
-  if (!product) return;
-
-  document.getElementById("modal-image").src = product.image;
-  document.getElementById("modal-name").textContent = product.name;
-  document.getElementById("modal-category").textContent = product.category;
-  document.getElementById("modal-description").textContent = product.description;
-  document.getElementById("modal-price").textContent = formatPrice(product.price);
-
-  const modalBuy = document.getElementById("modal-buy");
-  modalBuy.href = "https://wa.me/6285719046064?text=" +
-    encodeURIComponent("Halo, saya ingin membeli " + product.name);
-
-  document.getElementById("product-modal").classList.add("active");
-}
-
-function closeProduct() {
-  document.getElementById("product-modal").classList.remove("active");
-}
-
-document.getElementById("product-modal").addEventListener("click", function(event) {
-  if (event.target === this) {
-    closeProduct();
-  }
-});
 renderProducts();
-
