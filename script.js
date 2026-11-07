@@ -93,4 +93,5 @@ document.getElementById("product-modal").addEventListener("click", function(even
     closeProduct();
   }
 });
+renderProducts();
 
