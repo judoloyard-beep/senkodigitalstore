@@ -5,7 +5,7 @@ const products = [
     name: "Minimal Portfolio",
     description: "Template website portfolio modern dan elegan.",
     price: 35000,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+    image: "assets/products/.jpg",
     category: "Website Template"
   },
   {
@@ -13,7 +13,7 @@ const products = [
     name: "Digital Store",
     description: "Template toko online dengan tampilan profesional.",
     price: 45000,
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800",
+    image: "assets/products/digital-store.jpg",
     category: "Website Template"
   },
   {
@@ -21,7 +21,7 @@ const products = [
     name: "Creative Landing Page",
     description: "Landing page clean untuk promosi produk.",
     price: 30000,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800",
+    image: "assets/products/landing-page.jpg",
     category: "Website Template"
   }
 ];
@@ -54,10 +54,27 @@ function renderProducts() {
         <div class="product-price">
           ${formatPrice(product.price)}
         </div>
+        <button
+          class="detail-button"
+          onclick="showProduct(${product.id})"
+        >
+          Lihat Produk →
+        </button>
       </div>
     </article>
   `).join("");
 }
 
-renderProducts();
+function showProduct(id) {
+  const product = products.find(item => item.id === id);
 
+  if (!product) return;
+
+  alert(
+    product.name + "\n\n" +
+    product.description + "\n\n" +
+    "Harga: " + formatPrice(product.price)
+  );
+}
+
+renderProducts();
