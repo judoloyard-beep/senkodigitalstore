@@ -492,4 +492,21 @@ footer p {
   }
 }
 
+#modal-buy {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: #171717;
+  color: #ffffff;
+  padding: 15px 24px;
+  margin-top: 20px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+
 
