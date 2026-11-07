@@ -65,16 +65,32 @@ function renderProducts() {
   `).join("");
 }
 
+
 function showProduct(id) {
   const product = products.find(item => item.id === id);
 
   if (!product) return;
 
-  alert(
-    product.name + "\n\n" +
-    product.description + "\n\n" +
-    "Harga: " + formatPrice(product.price)
-  );
+  document.getElementById("modal-image").src = product.image;
+  document.getElementById("modal-name").textContent = product.name;
+  document.getElementById("modal-category").textContent = product.category;
+  document.getElementById("modal-description").textContent = product.description;
+  document.getElementById("modal-price").textContent = formatPrice(product.price);
+
+  const modalBuy = document.getElementById("modal-buy");
+  modalBuy.href = "https://wa.me/6285719046064?text=" +
+    encodeURIComponent("Halo, saya ingin membeli " + product.name);
+
+  document.getElementById("product-modal").classList.add("active");
 }
 
-renderProducts();
+function closeProduct() {
+  document.getElementById("product-modal").classList.remove("active");
+}
+
+document.getElementById("product-modal").addEventListener("click", function(event) {
+  if (event.target === this) {
+    closeProduct();
+  }
+});
+
