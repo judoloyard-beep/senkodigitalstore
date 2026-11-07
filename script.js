@@ -5,7 +5,7 @@ const products = [
     name: "Minimal Portfolio",
     description: "Template website portfolio modern dan elegan.",
     price: 35000,
-    image: "assets/products/.jpg",
+    image: "assets/products/Screenshot_20261107-223203_1.jpg",
     category: "Website Template"
   },
   {
@@ -13,7 +13,7 @@ const products = [
     name: "Digital Store",
     description: "Template toko online dengan tampilan profesional.",
     price: 45000,
-    image: "assets/products/digital-store.jpg",
+    image: "assets/products/Screenshot_20261107-223205_1.jpg",
     category: "Website Template"
   },
   {
@@ -21,7 +21,7 @@ const products = [
     name: "Creative Landing Page",
     description: "Landing page clean untuk promosi produk.",
     price: 30000,
-    image: "assets/products/landing-page.jpg",
+    image: "assets/products/Screenshot_20261107-224035_1.jpg",
     category: "Website Template"
   }
 ];
