@@ -2,8 +2,8 @@
 const products = [
   {
     id: 1,
-    name: "Minimal Portfolio",
-    description: "Template website portfolio modern dan elegan.",
+    name: "Dashboard minimalis clean",
+    description: "Template website dashboard.",
     price: 35000,
     image: "assets/products/Screenshot_20261107-223203_1.jpg",
     category: "Website Template"
@@ -11,7 +11,7 @@ const products = [
   {
     id: 2,
     name: "Digital Store",
-    description: "Template toko online dengan tampilan profesional.",
+    description: "Template toko online dengan tampilan profesional dan minimalist.",
     price: 45000,
     image: "assets/products/Screenshot_20261107-223205_1.jpg",
     category: "Website Template"
