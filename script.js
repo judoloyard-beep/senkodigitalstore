@@ -27,7 +27,6 @@ const products = [
 ];
 
 const productList = document.getElementById("product-list");
-
 const whatsappNumber = "6285719046064";
 
 function formatPrice(price) {
@@ -39,12 +38,14 @@ function formatPrice(price) {
 }
 
 function renderProducts() {
+  if (!productList) return;
+
   productList.innerHTML = products.map(product => {
     const message =
       `Halo, saya ingin membeli ${product.name} dengan harga ${formatPrice(product.price)}. Apakah masih tersedia?`;
 
     const whatsappLink =
-      `https://wa.me/${WhatsappNumber?text=${encodeURIComponent(message)}`;
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     return `
       <article class="product-card">
