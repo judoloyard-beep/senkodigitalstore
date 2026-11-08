@@ -12,7 +12,7 @@ const products = [
     id: 2,
     name: "Digital Store",
     description: "Template toko online dengan tampilan profesional dan minimalist.",
-    price: 45000,
+    price: 40000,
     image: "assets/products/web minimalist.png",
     category: "Website Template"
   },
@@ -20,7 +20,7 @@ const products = [
     id: 3,
     name: "Web Ai",
     description: "Web ai, untuk chat atau asisten pribadi.",
-    price: 30000,
+    price: 50000,
     image: "assets/products/Ai.png",
     category: "Website Ai"
   }
