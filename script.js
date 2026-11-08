@@ -5,7 +5,7 @@ const products = [
     name: "Dashboard minimalis clean",
     description: "Template website dashboard.",
     price: 35000,
-    image: "assets/products/Screenshot_20261107-223203_1.jpg",
+    image: "assets/products/dashboard.png",
     category: "Website Template"
   },
   {
@@ -13,16 +13,16 @@ const products = [
     name: "Digital Store",
     description: "Template toko online dengan tampilan profesional dan minimalist.",
     price: 45000,
-    image: "assets/products/Screenshot_20261107-223205_1.jpg",
+    image: "assets/products/web minimalist.png",
     category: "Website Template"
   },
   {
     id: 3,
-    name: "Creative Landing Page",
-    description: "Landing page clean untuk promosi produk.",
+    name: "Web Ai",
+    description: "Web ai, untuk chat atau asisten pribadi.",
     price: 30000,
-    image: "assets/products/Screenshot_20261107-224035_1.jpg",
-    category: "Website Template"
+    image: "assets/products/Ai.png",
+    category: "Website Ai"
   }
 ];
 
